@@ -1,27 +1,43 @@
 package thomis1.bit.example.placesinnewzealand;
 
-import java.util.Random;
-
 public class Question {
-    private int number1;
-    private int number2;
+    private int picture1;
+    private int picture2;
+    private int picture3;
+    private int picture4;
     private int answer;
+    private String question;
 
-    public Question()
-    {
-        Random rand = new Random();
-        number1 = rand.nextInt(13);
-        number2 = rand.nextInt(12);
-        answer = number1*number2;
-
+    public Question(int picture1, int picture2, int picture3, int picture4, int answer, String question) {
+        this.picture1 = picture1;
+        this.picture2 = picture2;
+        this.picture3 = picture3;
+        this.picture4 = picture4;
+        this.answer = answer;
+        this.question = question;
     }
 
-    public int getAnswer()
-    {
+    public int getPicture1() {
+        return picture1;
+    }
+
+    public int getPicture2() {
+        return picture2;
+    }
+
+    public int getPicture3() {
+        return picture3;
+    }
+
+    public int getPicture4() {
+        return picture4;
+    }
+
+    public int getAnswer() {
         return answer;
     }
-    public String equation()
-    {
-        return number1 + " * " + number2;
+
+    public String getQuestion() {
+        return question;
     }
 }

@@ -16,7 +16,7 @@ public class Results extends AppCompatActivity {
         Intent howIgotHere = getIntent();
         int score = howIgotHere.getIntExtra("results", -1);
         TextView tv = (TextView) findViewById(R.id.textViewResult);
-        tv.setText(score + " out of 5");
+        tv.setText(score + " out of 10");
     }
 
 }
