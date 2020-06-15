@@ -13,8 +13,8 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        Button buttonOne = findViewById(R.id.buttonStart);
-        buttonOne.setOnClickListener(new View.OnClickListener() {
+        Button buttonStart = findViewById(R.id.buttonStart);
+        buttonStart.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 Intent changeActivity = new Intent(Menu.this, MainActivity.class);
