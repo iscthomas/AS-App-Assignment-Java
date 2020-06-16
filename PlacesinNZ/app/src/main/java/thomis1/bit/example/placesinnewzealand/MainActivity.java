@@ -45,9 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         iv3.setOnClickListener(this);
         iv4 = (TextView) findViewById(R.id.textView4);
         iv4.setOnClickListener(this);
-        ivA = (TextView) findViewById(R.id.textViewAnswer);
         question = (TextView) findViewById((R.id.textViewQuestion));
-        Button buttonNext = findViewById(R.id.buttonNext);
 
         setUpQuestions();
         showQuestion();
@@ -73,7 +71,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * populate each question based on the current questionNumber
      */
     public void showQuestion() {
-        ivA.setBackgroundResource(0);
         iv1.setBackgroundResource(questions.get(questionNumber).getPicture1());
         iv2.setBackgroundResource(questions.get(questionNumber).getPicture2());
         iv3.setBackgroundResource(questions.get(questionNumber).getPicture3());
@@ -91,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         score++;
                     }
                     Toast.makeText(this, "Correct", Toast.LENGTH_LONG).show();
-                    ivA.setBackgroundResource(questions.get(questionNumber).getPicture1());
                     questionNumber++;
                     if (questionNumber < 10) {
                         showQuestion();
@@ -108,7 +104,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         score++;
                     }
                     Toast.makeText(this, "Correct", Toast.LENGTH_LONG).show();
-                    ivA.setBackgroundResource(questions.get(questionNumber).getPicture2());
                     questionNumber++;
                     if (questionNumber < 10) {
                         showQuestion();
@@ -125,7 +120,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         score++;
                     }
                     Toast.makeText(this, "Correct", Toast.LENGTH_LONG).show();
-                    ivA.setBackgroundResource(questions.get(questionNumber).getPicture3());
                     questionNumber++;
                     if (questionNumber < 10) {
                         showQuestion();
@@ -142,7 +136,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         score++;
                     }
                     Toast.makeText(this, "Correct", Toast.LENGTH_LONG).show();
-                    ivA.setBackgroundResource(questions.get(questionNumber).getPicture4());
                     questionNumber++;
                     if (questionNumber < 10) {
                         showQuestion();
