@@ -19,6 +19,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+/**
+ * @author Isaac Thomas
+ * @date 17/6/2020
+ * The Main Activity is used to randomise and display the questions, as well as control gameplay in the application.
+ * This activity creates the question array based off of the question class and also keeps track of score for each game.
+ * for each question, there is a elif statement to aid the user in finding the correct answer with feedback.
+ * Once the game is finished, it will go to the results activity to display the final score to the user.
+ */
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     int questionNumber = 0;
     ArrayList<Question> questions = new ArrayList<Question>();
@@ -31,6 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Boolean correct = true;
     TextView textWrong;
 
+    /**
+     * sets the fields to the appropriate components on the app screen
+     * and executes the setup and show question methods on creation of activity
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +64,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         showQuestion();
     }
 
+    /**
+     * adds 10 questions to the questions array based on the Question class
+     * and then shuffles the questions for a random list.
+     */
 
     public void setUpQuestions() {
         questions.add(new Question(R.drawable.townhall, R.drawable.anglican, R.drawable.larnarch, R.drawable.firstchurch, R.id.textView2, "Click on the Picture of the Anglican Church", "Town Hall", "Anglican Church", "Larnarch Castle", "First Church"));
@@ -68,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * populate each question based on the current questionNumber
+     * populate each question based on the current questionNumber and sets the correct flag to true for new question
      */
     public void showQuestion() {
         iv1.setBackgroundResource(questions.get(questionNumber).getPicture1());
@@ -80,6 +97,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         correct = true;
     }
 
+    /**
+     * when an image is pressed, check if the answer is correct or wrong,
+     * if the answer is correct on the first try, the users score will be incremented by one.
+     * if the answer is wrong, the correct flag will be set to false and the user will have to try again,
+     * since the correct flag is false the user will not receive score if they do not get the question right on the first try.
+     * once 10 questions have been answered the app will move to the results activity.
+     */
     @Override
     public void onClick(View v) {
         if (questionNumber < 10) {
